@@ -59,7 +59,7 @@ int main(int argc __attribute__((unused)),
 
 		if (*args[0] == '\0') /* if we get only spaces, tabs and line breaks */
 			continue;
-		status_return = hsh_execute_builtins(args, input_stdin,argv, &exit_status);
+		status_return = hsh_execute_builtins(args, input_stdin, argv, &exit_status);
 		free(input_stdin);
 		free(args);
 	}
