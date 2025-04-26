@@ -43,23 +43,14 @@ int main(int argc __attribute__((unused)),
 		if (glrv == -1) /* if we get EOF or any error */
 
 		{
-
 			free(input_stdin);
-
 			break;
 
 		}
-
-		/* if only spaces, tabs and line breaks are inputted */
-
 		if (validate_only_spaces(input_stdin))
-
 		{
-
 			free(input_stdin);
-
 			continue;
-
 		}
 
 		/* split input_stdin string into an array of arguments (tokenize input) */
@@ -67,17 +58,10 @@ int main(int argc __attribute__((unused)),
 		args = hsh_tokenizer(input_stdin);
 
 		if (*args[0] == '\0') /* if we get only spaces, tabs and line breaks */
-
 			continue;
-
 		status_return = hsh_execute_builtins(args, input_stdin,argv, &exit_status);
-
 		free(input_stdin);
-
 		free(args);
-
 	}
-
 	return (0);
-
 }
